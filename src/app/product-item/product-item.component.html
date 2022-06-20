@@ -1,0 +1,14 @@
+<div class="product-container">
+<a routerLink='/itemdetail' [queryParams]="{id: product.id }">
+  <div class="product-image">
+    <img src="{{ product.url }}" width="200px" height="200px" />
+  </div>
+</a>
+<div>{{ product.name }}</div>
+<div>${{ product.price }}</div>
+<form #form="ngForm" (ngSubmit)="submitForm()">
+  <input  required type="text" name="quant" id="quant" placeholder="Enter Quantity" [(ngModel)]="quant">
+  <br>
+  <input type="submit" [disabled]="form.invalid" value="Add to cart">
+</form>
+</div>

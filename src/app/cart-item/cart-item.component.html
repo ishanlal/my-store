@@ -1,0 +1,10 @@
+<div style="margin-bottom: 40px">
+  <div class="product-image">
+  <img src="{{ product.url }}" width="200px" height="200px" />
+  </div>
+  <h3>{{ product.name }}</h3>
+  <p>${{ product.price }}</p>
+  <p>Quantity: {{product.quantity}}</p>
+  <button class="btn btn-primary" style="margin-right: 10px" (click)="upvote(product)">Up</button><br>
+  <button class="btn btn-primary" style="margin-right: 10px" (click)="downvote(product)">Down</button><br>
+</div>
