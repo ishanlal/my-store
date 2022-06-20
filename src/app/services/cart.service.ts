@@ -27,13 +27,24 @@ export class CartService {
         this.cartItems[i].quantity = prod.quantity;
       }
     }
+    if(found){
+      if(prod.quantity < 1){
+        this.cartItems = this.cartItems.filter(item => item.id !== prod.id);
+      }
+    }
     if(!found){
-      this.cartItems.push(prod);
+      if(prod.quantity > 0){
+        this.cartItems.push(prod);
+      }
+      else{
+        alert('Enter quantity > 0');
+      }
     }
     return this.cartItems;
   }
   clearCartItems() {
     this.cartItems = [];
+    alert('Cart Cleared!');
     return this.cartItems;
   }
 }

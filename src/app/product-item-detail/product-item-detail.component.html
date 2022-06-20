@@ -4,6 +4,7 @@
   <br>
   <div>{{ product.name }}</div>
   <div>${{ product.price }}</div>
+  <div>{{ product.description }}</div>
   <br>
   <form #form="ngForm" (ngSubmit)="submitForm()">
     <input class="select-input" required type="text" name="quant" id="quant" placeholder="Enter Quantity" [(ngModel)]="quant">

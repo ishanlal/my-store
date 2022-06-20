@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
   }
 
   clearCartItems(): void {
-    console.log('clear cart called!');
+    console.log('Cart Cleared!');
     this.cartService.clearCartItems();
     this.total = this.cartService.getTotal();
     this.cartItems = [];
@@ -30,6 +30,7 @@ export class CartComponent implements OnInit {
 
   addToCart(item: Product): void{
     this.cartService.addToCartItems(item);
+    this.cartItems = this.cartService.getCartItems();
     this.total = this.cartService.getTotal();
   }
 }

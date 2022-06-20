@@ -32,7 +32,6 @@ export class ProductItemDetailComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
     this.id = params['id'];
   });
-  console.log('ID: ', this.id);
   // get all products
   this.productService.getProducts().subscribe(res => {
     for(let index = 0; index<res.length ;index++){
@@ -48,5 +47,6 @@ export class ProductItemDetailComponent implements OnInit {
   submitForm(): void {
     this.product.quantity = this.quant;
     this.cartService.addToCartItems(this.product);
+    alert('Product Added To Cart!');
   }
 }
