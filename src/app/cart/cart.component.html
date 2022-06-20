@@ -12,11 +12,11 @@
     <p>Total: {{total}}</p>
     <form #form="ngForm" class="form-margin">
       <label for="full_name">Full Name: </label><br>
-      <input  required minlength="10" type="text" name="full_name" id="full_name" placeholder="Enter Full Name" [(ngModel)]="full_name">
+      <input  required minlength="10" type="text" name="full_name" id="full_name" placeholder="Enter Full Name" [ngModel]="full_name" (ngModelChange)="full_name = $event">
       <br><label for="address">Address: </label><br>
-      <input  required minlength="10" type="text" name="address" id="address" placeholder="Enter Street Address" [(ngModel)]="st_addr">
+      <input  required minlength="10" type="text" name="address" id="address" placeholder="Enter Street Address" [ngModel]="st_addr"  (ngModelChange)="st_addr = $event">
       <br><label for="credit_card">Credit Card: </label><br>
-      <input numbers-only required minlength="16" maxlength="16" type="text" name="credit_card" id="credit_card" placeholder="Enter 16 digit Credit Card number" [(ngModel)]="cc_num">
+      <input numbers-only required minlength="16" maxlength="16" type="text" name="credit_card" id="credit_card" placeholder="Enter 16 digit Credit Card number" [ngModel]="cc_num"  (ngModelChange)="cc_num = $event"> 
       <br>
       <a routerLink="/appconfirmation" [queryParams]="{name: full_name, tot:total}">
       <input type="submit" [disabled]="form.invalid" value="Submit">

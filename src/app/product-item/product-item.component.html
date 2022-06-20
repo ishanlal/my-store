@@ -7,7 +7,7 @@
 <div>{{ product.name }}</div>
 <div>${{ product.price }}</div>
 <form #form="ngForm" (ngSubmit)="submitForm()">
-  <input  required type="text" name="quant" id="quant" placeholder="Enter Quantity" [(ngModel)]="quant">
+  <input  required type="text" name="quant" id="quant" placeholder="Enter Quantity" [ngModel]="quant"  (ngModelChange)="quant = $event">
   <br>
   <input type="submit" [disabled]="form.invalid" value="Add to cart">
 </form>
